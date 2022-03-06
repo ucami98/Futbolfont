@@ -1,1 +1,92 @@
-<p>team2 works!</p>
+<div class="bg-tb">
+    <br /><br />
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button [routerLink]="['/equipos']" class="btn cto">
+        Volver al registro
+      </button>
+      <br />
+    </div>
+    <br /><br />
+    <div class="row row-cols-1 g-4 m-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-grid gap-2 col-6 mx-auto"></div>
+            <table class="table">
+              <thead class="table-Dark">
+                <tr>
+                  <th scope="col">Equipo</th>
+                  <th>Numero</th>
+                  <th>Nombre</th>
+                  <th>Posición</th>
+                  <th>Tarjeta Amarilla</th>
+                  <th>Tarjeta Roja</th>
+                  <th>Gol</th>
+                  <th>Cambiar posición</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let item of listJugador; let i = index">
+                <tr *ngIf="item.team === 'Local'">
+                  <td scope="row">
+                    <span class="pointer">{{ item.team }}</span>
+                  </td>
+                  <td>
+                    <span class="pointer"> {{ item.numero }}</span>
+                  </td>
+                  <td>
+                    <span class="pointer"> {{ item.name }}</span>
+                  </td>
+                  <td>
+                    <span class="pointer"> {{ item.position }}</span>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      (click)="tAmarilla = tAmarilla - 1"
+                    >
+                      -</button
+                    ><a> {{ tAmarilla }} </a>
+                    <button
+                      class="btn btn-primary"
+                      (click)="tAmarilla = tAmarilla + 1"
+                    >
+                      +
+                    </button>
+                  </td>
+                  <td>
+                      <button
+                        class="btn btn-primary"
+                        (click)="tRoja = tRoja - 1"
+                      >
+                        -</button
+                      ><a> {{ tRoja }} </a>
+                      <button
+                        class="btn btn-primary"
+                        (click)="tRoja = tRoja + 1"
+                      >
+                        +
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-primary"
+                        (click)="gol = gol - 1"
+                      >
+                        -</button
+                      ><a> {{ gol }} </a>
+                      <button
+                        class="btn btn-primary"
+                        (click)="gol = gol + 1" min:0
+                      >
+                        +
+                      </button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
