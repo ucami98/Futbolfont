@@ -1,0 +1,40 @@
+.cta {
+  background-color: rgba(221, 64, 64, 0.616);
+  color: white;
+  border: 1px solid primary;
+
+  transition: 0.2s ease;
+}
+
+.cto {
+  background-color: rgb(0, 81, 156);;
+  color: rgb(255, 255, 255);
+  border: 1px solid primary;
+  width: 80%;
+ 
+  transition: 0.2s ease;
+}
+.sm {
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  border: 3px;
+  height: 30px;
+  padding: 0;
+}
+.bg-tb {
+  background: url(../../../assets/background/tabla-bg.jpg)no-repeat top center
+  #767fc26c;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border:5px;
+   height: 655px;
+   width: 100%;
+   
+}
+

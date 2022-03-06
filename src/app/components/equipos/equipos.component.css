@@ -1,0 +1,9 @@
+.bg-eq {
+    background: url(../../../assets/background/equipos-bg.png) no-repeat top center
+      #f4f5fc;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 657px;
+  }

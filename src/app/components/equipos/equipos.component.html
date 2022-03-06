@@ -1,0 +1,32 @@
+<div class="card text-center p-3 bg-eq">
+  <div class="card-body">
+    <h4 class="card-title">Equipos jugadores</h4>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <form id="teamForm" name="team-form" data-toggle="validator" >
+            <div class="input-group-text">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Ingrese el nombre del equipo local"
+                [(ngModel)]="team1"
+                />
+            </div>
+            <div class="input-group-text">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Ingrese el nombre del equipo visitante"
+                [(ngModel)]="team2"
+                />
+            </div>
+        </form>
+     <button class="btn btn-primary"  (click)="agregarEquipo()" >Guardar equipos</button>
+    </div>
+   <br><br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+      <button class="btn btn-primary" type="button"  (click)="eliminar()">Crear nuevo juego</button>
+    </div>
+  </div>
+ <app-jugadores></app-jugadores>
+ <button [routerLink]="['/tabla']" class="btn-success">Ver equipos</button>
+</div>

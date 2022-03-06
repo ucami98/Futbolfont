@@ -1,0 +1,99 @@
+<div class="bg-tb">
+  <br><br>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button [routerLink]="['/equipos']" class="btn cto">
+      Volver al registro
+    </button>
+    <br>
+  </div>
+  <br><br>  
+  <div class="row row-cols-1 row-cols-md-2 g-4 m-3">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button [routerLink]="['/teamLocal']" class="btn cto">
+             Generar Acción
+            </button>
+          </div>
+          <table class="table ">
+            <thead class="table-Dark">
+              <tr>
+                <th scope="col">Equipo</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Posición</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of listJugador; let i = index">
+              <tr *ngIf="item.team === 'Visitante'">
+                <td scope="row">
+                  <span class="pointer">{{ item.team }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.numero }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.name }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.position }}</span>
+                </td>
+                <td>
+                  <button class="btn sm cta" (click)="delete(item._id)">
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button [routerLink]="['/teamVisitante']" class="btn cto">
+             Generar Acción
+            </button>
+            <br>
+          </div>
+          <table class="table table-sm">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">Equipo</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Posición</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of listJugador; let i = index">
+              <tr *ngIf="item.team === 'Local'">
+                <td>
+                  <span class="pointer">{{ item.team }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.numero }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.name }}</span>
+                </td>
+                <td>
+                  <span class="pointer"> {{ item.position }}</span>
+                </td>
+                <td>
+                  <button class="btn sm cta" (click)="delete(item._id)">
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

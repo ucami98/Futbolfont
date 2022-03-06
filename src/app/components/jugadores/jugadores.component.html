@@ -1,0 +1,73 @@
+<form
+  [formGroup]="form"
+  id="jugadoresForm"
+  name="jugadores-form"
+  data-toggle="validator"
+>
+  <div class="card text-center">
+    <div class="card-header">Información del jugador</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <label for="floatingInputGrid">Nombre del jugador</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre"
+            formControlName="name"
+          />
+        </div>
+        <div class="col-sm-3">
+          <label for="floatingInputGrid">Numero del jugador</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Numero"
+            formControlName="numero"
+            min="0"
+          />
+        </div>
+        <div class="col-sm-3">
+          <label class="form-floatingInputGrid">Seleccione la posición del jugador</label>
+          <select
+            aria-describedby="posición del jugador"
+            class="form-select form-select mb-3"
+            formControlName="position"
+          >
+            <option
+              *ngFor="let item of config.jugadorComponent"
+              value="{{ item.posicion }}"
+            >
+              {{ item.posicion }}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label class="floatingInputGrid">Seleccione el equipo del jugador</label>
+          <select
+            aria-describedby="equipo del jugador"
+            class="form-select form-select mb-3"
+            formControlName="team"
+          >
+            <option
+              *ngFor="let item of config.equipoComponent"
+              value="{{ item.equipo }}"
+            >
+              {{ item.equipo }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <br /><br />
+      <div class="-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-success" type="button" (click)="enviarJugador()">
+          Agregar Jugador
+        </button>
+        <button class="btn btn-danger" type="button" (click)="reset()">
+          Descartar
+        </button>
+      </div>
+    </div>
+  </div>
+  <br />
+</form>

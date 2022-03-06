@@ -1,0 +1,13 @@
+.bg-log {
+  background: url(../../../assets/background/login-bg.png) no-repeat top center
+    #f4f5fc;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 650px;
+}
+
+.card-log {
+  background: url(../../../assets/card/card-log.png);
+}
